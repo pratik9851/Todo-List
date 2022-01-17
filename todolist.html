@@ -5,16 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-      <div id="container">
-    <h1>Todo-List</h1>
-    <input type="text" id="inp" placeholder="write your task here" />
-    <span onclick="addTask()">Addtask</span>
-    
+    <div id="container">
+      <h1>Todo-List</h1>
+      <input type="text" id="inp" placeholder="write your task here" />
+      <span onclick="addTask()">Addtask</span>
+      <div style="margin-top: 15px">
+        <button onclick="deleteall()">Delete all task</button>
+        <button id="alldone" onclick="alldone()">Done all task</button>
+      </div>
+    </div>
     <div id="tasks"></div>
-</div>
   </body>
 </html>
 
