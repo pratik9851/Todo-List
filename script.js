@@ -15,7 +15,7 @@ function addTask() {
     id = id + 1;
 
     div.innerHTML = `<p class="item" id=${id}>${task}</p><div id="btn"><button id="isdone" onclick="Done(${id})">done</button> <button onclick="remove(${id})">remove</button></div>`;
-
+    div.style.marginTop="10px"
     tasks.append(div);
   }
 }
@@ -46,14 +46,18 @@ function deleteall() {
 }
 
 function alldone() {
-  document.querySelectorAll(".item");
+  let el=document.getElementsByClassName('item');
   if (document.getElementById("alldone").innerHTML === "done all task") {
     document.getElementById("alldone").innerHTML = "undone all task";
-    document.querySelectorAll(".item").style.textDecoration = "line-through";
-    document.querySelectorAll(".item").style.color = "green";
+    for(var i=0;i<el.length;i++){
+      el[i].style.textDecoration = "line-through";
+    el[i].style.color = "green";
+    }
   } else {
     document.getElementById("alldone").innerHTML = "done all task";
-    document.querySelectorAll(".item").style.textDecoration = "none";
-    document.querySelectorAll(".item").style.color = "black";
+    for(var j=0;j<el.length;j++){
+    el[j].style.textDecoration = "none";
+    el[j].style.color = "black";
+  }
   }
 }
